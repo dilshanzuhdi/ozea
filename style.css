@@ -274,4 +274,69 @@ body:before{
 .page.is-leaving{
   opacity: 0;
   transform: translateY(6px);
+
+}
+/* ---------- Mobile nav fix (premium) ---------- */
+@media (max-width: 820px){
+
+  .nav-inner{
+    align-items:flex-start;
+    padding:14px 0;
+    gap:12px;
+  }
+
+  /* Stack brand + nav nicely */
+  .brand{
+    flex: 0 0 auto;
+    gap:10px;
+    align-items:center;
+  }
+
+  /* Make the tagline smaller and keep it tidy */
+  .brand .tag{
+    font-size:12px;
+    line-height:1.2;
+    max-width: 140px;
+  }
+
+  /* Turn nav into horizontal scroll row */
+  .nav-links{
+    flex: 1 1 auto;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+    flex-wrap:nowrap;              /* key: stop wrapping */
+    overflow-x:auto;               /* allow scroll */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom:6px;
+    margin-left:10px;
+
+    scrollbar-width:none;          /* hide scrollbar */
+  }
+  .nav-links::-webkit-scrollbar{ display:none; }
+
+  /* Make links feel like premium tabs/pills */
+  .nav-links a{
+    white-space:nowrap;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+
+    padding:9px 12px;
+    border:1px solid transparent;
+    border-radius:999px;
+    background:transparent;
+  }
+
+  .nav-links a.active{
+    color:var(--text);
+    border-color:var(--line);
+    background:rgba(255,255,255,.65);
+  }
+
+  /* Optional: make logo slightly smaller on mobile */
+  .logo-img img{
+    height:34px;
+  }
 }
