@@ -9,14 +9,26 @@
 <body>
 <div class="page">
 <header class="nav">
-  <div class="container nav-inner">
-    <div class="brand"><a href="index.html" class="logo-img">
-  <img src="images/ozea-logo.png" alt="Ozea" />
-</a><div class="tag">Wholesale</div></div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a><a href="catalog.html">Catalog</a>
-      <a href="about.html">About</a><a class="active" href="wholesale.html">Wholesale</a><a href="contact.html">Contact</a>
+  <div class="container nav-inner" id="navInner">
+    <a class="brand" href="index.html" aria-label="Ozea home">
+      <img class="brand-logo" src="images/Ozea.png" alt="Ozea">
+      <div class="tag">Objects for everyday living</div>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav id="siteNav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="contact.html">Contact</a>
     </nav>
+  </div>
+</header>
   </div>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,3 +128,4 @@ document.getElementById("y").textContent = new Date().getFullYear();
 </body>
 
 </html>
+
