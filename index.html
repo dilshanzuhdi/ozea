@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ozea — Premium Essentials</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Premium fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <a href="index.html" class="logo-img">
+  <img src="images/ozea-logo.png" alt="Ozea" />
+</a>
+      <div class="tag">Objects for everyday living</div>
+    </div>
+    <nav class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <!-- Left: Brand story -->
+    <div>
+      <div class="h-eyebrow">Designed in Vancouver, BC • Small runs • Premium finish</div>
+
+      <h1 class="h-title">Quiet luxury, in the objects you reach for daily.</h1>
+
+      <p class="h-sub">
+        Ozea designs premium essentials across home, accessories, drinkware, and pet —
+        from ceramics and bottles to handbags and pet accessories.
+        Clean silhouettes, refined details, and small-batch releases.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn primary" href="catalog.html">View Catalog</a>
+        <a class="btn ghost" href="wholesale.html">Wholesale Inquiries</a>
+      </div>
+
+      <p class="h-sub" style="margin-top:18px;max-width:60ch">
+        <span style="letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--muted)">Signature</span><br/>
+        Minimal lines • calm neutrals • elevated everyday pieces
+      </p>
+    </div>
+
+    <!-- Right: Premium media card -->
+<div class="hero-media">
+  <img src="images/Brand-Hero.png"
+       alt="Ozea premium essentials"
+       style="width:100%;height:320px;object-fit:cover;">
+  <div class="cap">
+        <span style="letter-spacing:.20em;text-transform:uppercase;font-size:11px;color:var(--muted)">Wholesale-ready</span>
+        <div style="margin-top:10px;line-height:1.7">
+          Retailers can request line sheets, wholesale pricing, and current availability.
+          Curated assortments across home, accessories, drinkware, and pet.
+        </div>
+
+        <div class="hr" style="margin:16px 0"></div>
+
+        <span style="letter-spacing:.20em;text-transform:uppercase;font-size:11px;color:var(--muted)">Contact</span>
+        <div style="margin-top:8px;line-height:1.7">
+          <a href="mailto:hello@ozea.ca">hello@ozea.ca</a><br/>
+          <a href="mailto:wholesale@ozea.ca">wholesale@ozea.ca</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Collections</h2>
+    <p>Designed to display beautifully — and to sell beautifully in-store.</p>
+
+    <div class="grid-3" style="margin-top:16px">
+      <div class="card">
+        <div class="k">Home</div>
+        <div class="v">Ceramics & objects with sculptural presence</div>
+      </div>
+      <div class="card">
+        <div class="k">Accessories</div>
+        <div class="v">Designer-inspired essentials with refined details</div>
+      </div>
+      <div class="card">
+        <div class="k">Pet</div>
+        <div class="v">Premium accessories and toys to elevate pet spaces</div>
+      </div>
+    </div>
+
+    <p style="margin-top:14px;color:var(--muted);line-height:1.8;max-width:70ch">
+      Drinkware, seasonal drops, and limited releases rotate through the catalog.
+      If you’re looking for something specific, contact us for current availability.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container split">
+
+    <div class="card">
+      <div class="k">For retailers</div>
+      <div class="v" style="margin-top:10px">Boutique partnerships</div>
+      <p style="color:var(--muted);margin:10px 0 0;line-height:1.8">
+        Carry Ozea in your store. Request a line sheet, wholesale terms,
+        and current availability across our core categories.
+      </p>
+      <a class="btn primary" style="margin-top:14px" href="wholesale.html">Apply for Wholesale</a>
+    </div>
+
+    <div class="card">
+      <div class="k">For customers</div>
+      <div class="v" style="margin-top:10px">Inquiries & custom requests</div>
+      <p style="color:var(--muted);margin:10px 0 0;line-height:1.8">
+        Online checkout is coming later. For orders now, email us with the item name and quantity,
+        or ask for current availability.
+      </p>
+      <a class="btn" style="margin-top:14px" href="contact.html">Contact Ozea</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Ozea • ozea.ca</div>
+    <div>
+      <a href="policies.html">Policies</a> •
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+  // Fade in on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const page = document.querySelector(".page");
+    if (page) requestAnimationFrame(() => page.classList.add("is-ready"));
+  });
+
+  // Fade out before navigating
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // only intercept internal navigation
+    const isExternal = link.host && link.host !== window.location.host;
+    const isAnchor = link.getAttribute("href")?.startsWith("#");
+    const isMailOrTel = link.getAttribute("href")?.startsWith("mailto:") || link.getAttribute("href")?.startsWith("tel:");
+    const newTab = link.target === "_blank";
+
+    if (isExternal || isAnchor || isMailOrTel || newTab) return;
+
+    const page = document.querySelector(".page");
+    if (!page) return;
+
+    e.preventDefault();
+    page.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+</script>
+</body>
+</html>

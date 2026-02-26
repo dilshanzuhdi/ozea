@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ozea — About</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><a href="index.html" class="logo-img">
+  <img src="images/ozea-logo.png" alt="Ozea" />
+</a><div class="tag">About</div></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="catalog.html">Catalog</a>
+      <a class="active" href="about.html">About</a><a href="wholesale.html">Wholesale</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>About Ozea</h2>
+    <p>
+      Ozea is a small ceramics brand creating creative vases, cups, and pet accessories in limited runs.
+      Each piece is made in small batches — refined, functional, and designed to elevate everyday spaces.
+    </p>
+
+    <div class="hr"></div>
+
+    <div class="split">
+      <div class="card">
+        <div class="k">Design approach</div>
+        <div class="v" style="margin-top:10px">Clean forms, premium presence</div>
+        <p style="color:var(--muted);line-height:1.7;margin:10px 0 0">
+          Minimal lines, calm neutrals, and sculptural shapes that feel like art — but live well in real homes.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="k">Materials</div>
+        <div class="v" style="margin-top:10px">Small-batch variation</div>
+        <p style="color:var(--muted);line-height:1.7;margin:10px 0 0">
+          Handmade pieces will naturally vary slightly in glaze and texture — that’s part of their uniqueness.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Ozea</div>
+    <div><a href="policies.html">Policies</a> • <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+  // Fade in on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const page = document.querySelector(".page");
+    if (page) requestAnimationFrame(() => page.classList.add("is-ready"));
+  });
+
+  // Fade out before navigating
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // only intercept internal navigation
+    const isExternal = link.host && link.host !== window.location.host;
+    const isAnchor = link.getAttribute("href")?.startsWith("#");
+    const isMailOrTel = link.getAttribute("href")?.startsWith("mailto:") || link.getAttribute("href")?.startsWith("tel:");
+    const newTab = link.target === "_blank";
+
+    if (isExternal || isAnchor || isMailOrTel || newTab) return;
+
+    const page = document.querySelector(".page");
+    if (!page) return;
+
+    e.preventDefault();
+    page.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+</script>
+</body>
+</html>

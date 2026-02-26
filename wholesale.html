@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ozea — Wholesale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page">
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><a href="index.html" class="logo-img">
+  <img src="images/ozea-logo.png" alt="Ozea" />
+</a><div class="tag">Wholesale</div></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a><a class="active" href="wholesale.html">Wholesale</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Wholesale with Ozea</h2>
+    <p>
+      Ozea partners with select boutiques and retailers. Request our line sheet, wholesale pricing, and current availability.
+    </p>
+
+    <div class="grid-3" style="margin-top:14px">
+      <div class="card">
+        <div class="k">Best sellers</div>
+        <div class="v">Giftable ceramics</div>
+        <p style="color:var(--muted);margin:10px 0 0;line-height:1.7">Vases, cups, and pet pieces designed to display beautifully.</p>
+      </div>
+      <div class="card">
+        <div class="k">Small batch</div>
+        <div class="v">Limited drops</div>
+        <p style="color:var(--muted);margin:10px 0 0;line-height:1.7">Fresh inventory in curated runs and seasonal releases.</p>
+      </div>
+      <div class="card">
+        <div class="k">Support</div>
+        <div class="v">Retail-ready assets</div>
+        <p style="color:var(--muted);margin:10px 0 0;line-height:1.7">Product names, descriptions, and imagery for merchandising.</p>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="card">
+      <div class="k">How to apply</div>
+      <div class="v" style="margin-top:10px">Email wholesale@ozea.ca</div>
+      <p style="color:var(--muted);line-height:1.7;margin:10px 0 0">
+        Please include:
+        <br/>• Store name + location
+        <br/>• Website / Instagram
+        <br/>• What you’d like to stock (vases / cups / pet)
+        <br/>• Estimated opening order quantity
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Ozea</div>
+    <div><a href="policies.html">Policies</a></div>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+  // Fade in on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const page = document.querySelector(".page");
+    if (page) requestAnimationFrame(() => page.classList.add("is-ready"));
+  });
+
+  // Fade out before navigating
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // only intercept internal navigation
+    const isExternal = link.host && link.host !== window.location.host;
+    const isAnchor = link.getAttribute("href")?.startsWith("#");
+    const isMailOrTel = link.getAttribute("href")?.startsWith("mailto:") || link.getAttribute("href")?.startsWith("tel:");
+    const newTab = link.target === "_blank";
+
+    if (isExternal || isAnchor || isMailOrTel || newTab) return;
+
+    const page = document.querySelector(".page");
+    if (!page) return;
+
+    e.preventDefault();
+    page.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+</script>
+</body>
+</html>

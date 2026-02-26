@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ozea — Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page">
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><a href="index.html" class="logo-img">
+  <img src="images/ozea-logo.png" alt="Ozea" />
+</a><div class="tag">Contact</div></div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a><a href="wholesale.html">Wholesale</a><a class="active" href="contact.html">Contact</a>
+    </nav>
+  </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>For orders and general inquiries:</p>
+    <div class="card">
+      <div class="k">Email</div>
+      <div class="v" style="margin-top:10px">hello@ozea.ca</div>
+      <div class="hr"></div>
+      <div class="k">Wholesale</div>
+      <div class="v" style="margin-top:10px">wholesale@ozea.ca</div>
+      <p style="color:var(--muted);margin:10px 0 0;line-height:1.7">
+        Tip: For wholesale requests, include your store name, location, website/IG, and estimated opening order.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Ozea</div>
+    <div><a href="policies.html">Policies</a></div>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+  // Fade in on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const page = document.querySelector(".page");
+    if (page) requestAnimationFrame(() => page.classList.add("is-ready"));
+  });
+
+  // Fade out before navigating
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // only intercept internal navigation
+    const isExternal = link.host && link.host !== window.location.host;
+    const isAnchor = link.getAttribute("href")?.startsWith("#");
+    const isMailOrTel = link.getAttribute("href")?.startsWith("mailto:") || link.getAttribute("href")?.startsWith("tel:");
+    const newTab = link.target === "_blank";
+
+    if (isExternal || isAnchor || isMailOrTel || newTab) return;
+
+    const page = document.querySelector(".page");
+    if (!page) return;
+
+    e.preventDefault();
+    page.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+</script>
+</body>
+</html>

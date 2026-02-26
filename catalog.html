@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ozea — Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <a href="index.html" class="logo-img">
+  <img src="images/ozea-logo.png" alt="Ozea" />
+</a>
+      <div class="tag">Catalog</div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="catalog.html">Catalog</a>
+      <a href="about.html">About</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Catalog</h2>
+    <p>
+      We’re not taking online checkout yet. To order, email <b>hello@ozea.ca</b> with the item name and quantity.
+      Retailers: use the Wholesale page to request line sheets and pricing.
+    </p>
+
+    <div class="gallery" style="margin-top:16px">
+      <!-- Replace each .ph with a real image later (recommended: 1500px wide JPG) -->
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Muse Vase</p>
+          <p class="tile-meta">Sculptural silhouette • Neutral glaze</p>
+          <div class="small">Size: TBD • Finish: matte</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Ripple Cup</p>
+          <p class="tile-meta">Hand-formed texture • Everyday weight</p>
+          <div class="small">Capacity: TBD • Food-safe</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Arc Mug</p>
+          <p class="tile-meta">Rounded handle • Smooth interior glaze</p>
+          <div class="small">Capacity: TBD • Food-safe</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Halo Vase</p>
+          <p class="tile-meta">Soft curves • Shelf statement piece</p>
+          <div class="small">Size: TBD • Finish: satin</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Pebble Bowl</p>
+          <p class="tile-meta">Minimal form • Multipurpose</p>
+          <div class="small">Size: TBD • Food-safe</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Cloud Saucer</p>
+          <p class="tile-meta">Clean rim • Works with cups/mugs</p>
+          <div class="small">Diameter: TBD</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Paw Dish</p>
+          <p class="tile-meta">Pet accessory • Elevated look</p>
+          <div class="small">Pet size: small/medium</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Pet Treat Jar</p>
+          <p class="tile-meta">Kitchen-safe storage • Minimal lid</p>
+          <div class="small">Capacity: TBD</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Dune Vase</p>
+          <p class="tile-meta">Textured exterior • Warm neutral</p>
+          <div class="small">Size: TBD</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="ph"></div>
+        <div class="tile-body">
+          <p class="tile-title">Mini Bud Vase</p>
+          <p class="tile-meta">Giftable • Perfect for small stems</p>
+          <div class="small">Size: small</div>
+          <a class="btn cta" href="contact.html">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Ozea</div>
+    <div><a href="policies.html">Policies</a></div>
+  </div>
+</footer>
+
+</div>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+  // Fade in on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const page = document.querySelector(".page");
+    if (page) requestAnimationFrame(() => page.classList.add("is-ready"));
+  });
+
+  // Fade out before navigating
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // only intercept internal navigation
+    const isExternal = link.host && link.host !== window.location.host;
+    const isAnchor = link.getAttribute("href")?.startsWith("#");
+    const isMailOrTel = link.getAttribute("href")?.startsWith("mailto:") || link.getAttribute("href")?.startsWith("tel:");
+    const newTab = link.target === "_blank";
+
+    if (isExternal || isAnchor || isMailOrTel || newTab) return;
+
+    const page = document.querySelector(".page");
+    if (!page) return;
+
+    e.preventDefault();
+    page.classList.add("is-leaving");
+
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 180);
+  });
+</script>
+</body>
+</html>
